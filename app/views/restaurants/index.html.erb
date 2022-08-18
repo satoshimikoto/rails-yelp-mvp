@@ -1,0 +1,17 @@
+<div class="navbar">
+  <h1>Restaurants</h1>
+  <%= link_to "Add a restaurant", new_restaurant_path, class:"btn btn-primary home-btn"%>
+</div>
+
+<div>
+<% @restaurants.each do |restaurant| %>
+  <div class="list">
+   <div class="column">
+      <div><%= link_to restaurant.name, restaurant, class:"header" %></div>
+      <div><%= restaurant.description %></div>
+      <div><%= "Cuisine: #{restaurant.category.capitalize}" %></div>
+      <div><%= "Address: #{restaurant.address}" %></div>
+    </div>
+  </div>
+<% end %>
+</div>
